@@ -79,14 +79,15 @@ Nel caso provassimo ad accedere senza un jwt valido, otteremo nella console il s
 
 ## Funzionamento generale
 
-Nell'autenticazione iniziale, verranno mandati all'endpoint "/authenticate", nell'header in una richiesta POST, in formato JSON le credenziali dell'utente:
+Nell'autenticazione iniziale, all'endpoint "/authenticate" in una richiesta POST, nell'header in formato JSON verrano mandate le credenziali dell'utente:
 
     {
       "userName": "nome",
       "password": "password"
     }
 
-Il microservizio una volta verificata la veridicità delle credenziali, genera il jwt a partire da queste, più un timestamp, che darà al token una validità di 10 ore (è possibile cambiarlo in base alle esigenze), firmato con un algoritmo H512.
+Il microservizio una volta verificata la veridicità delle credenziali, genera il jwt. 
+Il JWT è generato con il nome utente, la data di creazione e la data di scadenza (10 ore), firmato con un algoritmo H512.
 Il token verrà salvato nel browser in "Local Storage" con la voce "jwt". Quando si desiderà accedere ad endpoint protetti, il jwt verrà inviato nell'header della richiesta nel modo seguente:
 
     Authorization: Bearer "jwt"
