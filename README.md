@@ -1,11 +1,11 @@
 # Microservizio con autenticazione JWT
 
-Realizzazione di un microservizio che implementa l'autenticazione basata su JSON Web Token (JWT), con Spring Boot(v2.2.2), Spring Security e jjwt, con un front-end di esempio per verificare il funzionamento insieme a dei dati precaricati all'avvio dell'applicazione, e rimossi alla sua chiusura. Il database utilizzato è H2.
+Realizzazione di un microservizio che implementa l'autenticazione basata su JSON Web Token (JWT), con Spring Boot(v2.2.2), Spring Security e jjwt, con un front-end di esempio per verificare il funzionamento insieme a dei dati precaricati all'avvio dell'applicazione, e rimossi alla sua chiusura.
 
-## Requisiti
+## Dettagli
 
 - Java 1.8 
-- Maven 4.0.0
+- database: H2
 
 ## Installazione
 
