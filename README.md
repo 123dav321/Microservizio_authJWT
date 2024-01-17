@@ -83,7 +83,7 @@ Nell'autenticazione iniziale, verranno mandati all'endpoint "/authenticate", nel
 Il microservizio una volta verificata la veridicità delle credenziali, genera il jwt a partire da queste, più un timestamp, che darà al token una validità di 10 ore (è possibile cambiarlo in base alle esigenze), firmato con un algoritmo H512.
 Il token verrà salvato nel browser in "Local Storage" con la voce "jwt". Quando si desiderà accedere ad endpoint protetti, l'header della richiesta (GET nel nostro esempio) avrà il jwt mandato nel modo seguente:
 
-Authorization: Bearer <jwt>
+Authorization: Bearer "jwt"
 
 
  
