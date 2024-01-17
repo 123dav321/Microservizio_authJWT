@@ -17,13 +17,15 @@ Successivamente è possibile avviare il progetto Spring Boot
 ## Configurazione
 
 Nell "application.yml" è possibile configurare la porta da utilizzare con:
-    server:
-        port: 9192
+
+        server:
+            port: 9192
 
 Di default l'applicazione è impostata per usare la 9192.
 
 La chiave segreta usata per il JWT è stata salvata momentaneamente per lo sviluppo e il test, nell'application.propteries sotto la voce:
-    jwt.secret
+
+        jwt.secret
 
 E' buona norma non scrivere mai nel codice chiavi segrete usate per la cifratura dei dati, l'ideale è usare altri sistemi, come l'uso di variabili di ambiente.
 
