@@ -17,22 +17,22 @@ Successivamente è possibile avviare il progetto Spring Boot
 ## Configurazione
 
 Nell "application.yml" è possibile configurare la porta da utilizzare con:
-server:
-    port: 9192
+    server:
+        port: 9192
 
 Di default l'applicazione è impostata per usare la 9192.
 
 La chiave segreta usata per il JWT è stata salvata momentaneamente per lo sviluppo e il test, nell'application.propteries sotto la voce:
-jwt.secret
+    jwt.secret
 
 E' buona norma non scrivere mai nel codice chiavi segrete usate per la cifratura dei dati, l'ideale è usare altri sistemi, come l'uso di variabili di ambiente.
 
 L'applicazione consente l'uso di SSL per la cifratura dei dati, è possibile usarlo scommentando nell'application properties:
 
-server.ssl.key-store-type
-server.ssl.key-store
-server.ssl.key-store-password
-server.ssl.key-alias
+    server.ssl.key-store-type
+    server.ssl.key-store
+    server.ssl.key-store-password
+    server.ssl.key-alias
 
 ed iserendo i valori corretti in base al keystore utilizzato, che andrà salvato nella'albero delle cartelle del progetto. Successivamente certificato da qualche ente per il correto funzionamento.
 Bisognerà scommentare le righe di codice presenti nella "SecurityConfiguration" in "configure":
@@ -73,17 +73,17 @@ Nel caso provassimo ad accedere senza un jwt valido, otteremo nella console il s
 
 ## Funzionamento generale
 
-Nell'autenticazione iniziale, verranno mandati all'endpoint "/authenticate", nell'header di richiesta POST, in formato JSON le credenziali dell'utente nel seguente formato:
+Nell'autenticazione iniziale, verranno mandati all'endpoint "/authenticate", nell'header in una richiesta POST, in formato JSON le credenziali dell'utente:
 
-{
-  "userName": "nome",
-  "password": "password"
-}
+    {
+      "userName": "nome",
+      "password": "password"
+    }
 
 Il microservizio una volta verificata la veridicità delle credenziali, genera il jwt a partire da queste, più un timestamp, che darà al token una validità di 10 ore (è possibile cambiarlo in base alle esigenze), firmato con un algoritmo H512.
-Il token verrà salvato nel browser in "Local Storage" con la voce "jwt". Quando si desiderà accedere ad endpoint protetti, l'header della richiesta (GET nel nostro esempio) avrà il jwt mandato nel modo seguente:
+Il token verrà salvato nel browser in "Local Storage" con la voce "jwt". Quando si desiderà accedere ad endpoint protetti, il jwt verrà inviato nell'header della richiesta nel modo seguente:
 
-Authorization: Bearer "jwt"
+    Authorization: Bearer "jwt"
 
 
  
