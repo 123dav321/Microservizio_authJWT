@@ -10,9 +10,14 @@ Realizzazione di un microservizio che implementa l'autenticazione basata su JSON
 ## Installazione
 
 Con Maven assicurarsi che tutte le dipendense vengano installate correttamente con:
-mvn install
+
+        mvn install
 
 Successivamente è possibile avviare il progetto Spring Boot
+
+        mvn spring-boot:run
+
+In base all'ambiente di sviluppo che si sta utilizzando (Eclipse, IntelliJ IDEA ecc.) i passaggi possono essere diversi.
 
 ## Configurazione
 
@@ -36,7 +41,7 @@ L'applicazione consente l'uso di SSL per la cifratura dei dati, è possibile usa
     server.ssl.key-store-password
     server.ssl.key-alias
 
-ed iserendo i valori corretti in base al keystore utilizzato, che andrà salvato nella'albero delle cartelle del progetto. Successivamente certificato da qualche ente per il correto funzionamento.
+ed inserendo i valori corretti in base al keystore utilizzato, che andrà salvato nella'albero delle cartelle del progetto. Successivamente certificato da qualche ente per il correto funzionamento.
 Bisognerà scommentare le righe di codice presenti nella "SecurityConfiguration" in "configure":
 
         .requiresChannel()
