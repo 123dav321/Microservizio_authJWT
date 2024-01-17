@@ -55,6 +55,12 @@ Questa è la pagina che ospita il form per l'autenticazione, bisognerà inserire
 ![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/b51b2ddc-7b7c-4c53-84a3-6c00190c49c6)
 
 Se l'autenticazione è andata a buon fine, verrà salvato nel Local Storage del browser il token sotto la voce "jwt". 
+
+![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/cb39deed-9be2-44ef-b211-d34d3407a263)
+
+(Su google chroome apparirà così)
+
+
 D'ora in poi tutte quei endpoint che richiedono l'uso di un JWT lo andranno a prelevare dal browser e andranno a verificare la sua validità.
 
 Cliccando sul link risorsaProtetta è possibile vedere nella console del browser il messaggio restituito
