@@ -26,25 +26,26 @@ jwt.secret
 ```
 È consigliabile evitare di scrivere chiavi segrete direttamente nel codice per motivi di sicurezza. L'approccio ideale consiste nell'utilizzare altri metodi, come l'uso di variabili d'ambiente o un gestore di chiavi.
 
-L'applicazione supporta l'utilizzo di SSL per la cifratura dei dati. È possibile abilitarlo rimuovendo i commenti nelle seguenti righe nel file "application.properties":
+### SSL
+L'applicazione supporta già l'utilizzo di SSL per la cifratura dei dati e la configurazione può essere personalizzata tramite il file "application.properties". I parametri chiave per la configurazione di SSL sono i seguenti:
 ```
-server.ssl.key-store-type
-server.ssl.key-store
-server.ssl.key-store-password
-server.ssl.key-alias
+server.ssl.key-store-type= type
+server.ssl.key-store= percorso_keystore
+server.ssl.key-store-password= psw
+server.ssl.key-alias= alias_certificato
 ```
+È possibile inserire i valori desiderati in base al keystore utilizzato.
+Nella versione del progetto attuale è già presente un keystore, autofirmato, creato a fini di test e quindi non valido per un utilizzo in un ambiente di produzione.
 
-ed inserendo i valori corretti in base al keystore utilizzato, che andrà salvato nella'albero delle cartelle del progetto. 
-Bisognerà scommentare le righe di codice presenti nella "SecurityConfiguration" in "configure":
-
-Inserire i valori corretti in base al keystore utilizzato, che andrà salvato nella struttura delle cartelle del progetto. Sarà inoltre necessario decommentare le righe di codice presenti nella classe "SecurityConfiguration" nel metodo "configure":
+<br>
+Se si vuole disabilitarlo per motivi di test, basta commentare le righe viste in precedenza insieme alle seguenti in "SecurityConfiguration" in "configure":
 ```
 .requiresChannel()
 .anyRequest()
 .requiresSecure()
 .and()
 ```
-Infine, nel front-end, sarà necessario modificare l'URL per l'utilizzo di HTTPS."
+Infine, nel front-end, modificare tutti gli URL per far sì che usino HTTP.
 
 
 
