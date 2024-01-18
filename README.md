@@ -97,7 +97,7 @@ Nel processo di autenticazione iniziale, effettuato tramite la richiesta POST al
 }
 ```
 
-Una volta che il microservizio ha verificato la validità delle credenziali, procede alla generazione del JSON Web Token (JWT). Questo token contiene il nome utente, la data di creazione e la data di scadenza (impostata a 10 ore) ed è firmato mediante l'algoritmo H512.
+Una volta che il microservizio ha verificato la validità delle credenziali, procede alla generazione del JSON Web Token (JWT). Questo token contiene il nome utente, la data di creazione e la data di scadenza (impostata a 10 ore) ed è firmato mediante l'algoritmo HS512.
 
 Il JWT viene successivamente memorizzato nel browser in "Local Storage" con l'etichetta "jwt". Quando si desidera accedere agli endpoint protetti, il JWT viene incluso nell'header della richiesta nel seguente modo:
 
