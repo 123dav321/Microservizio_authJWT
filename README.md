@@ -24,7 +24,7 @@ La chiave segreta utilizzata per il JSON Web Token (JWT) è temporaneamente salv
 ```
 jwt.secret
 ```
-È consigliabile evitare di scrivere chiavi segrete direttamente nel codice per motivi di sicurezza. L'approccio ideale consiste nell'utilizzare altri metodi, come l'uso di variabili d'ambiente o un gestore di chiavi.
+È consigliabile evitare di scrivere chiavi segrete direttamente nel codice per motivi di sicurezza. L'approccio ideale consiste nell'utilizzare altri metodi, come l'uso di un gestore di chiavi. La scelta dell'approccio più appropriato dipenderà dalle specifiche esigenze d'uso.
 
 ### SSL
 L'applicazione supporta già l'utilizzo di SSL per la cifratura dei dati e la configurazione può essere personalizzata tramite il file "application.properties". I parametri chiave per la configurazione di SSL sono i seguenti:
