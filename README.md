@@ -35,7 +35,11 @@ server.ssl.key-store-password= psw
 server.ssl.key-alias= alias_certificato
 ```
 È possibile inserire i valori desiderati in base al keystore utilizzato.
-Nella versione del progetto attuale è già presente un keystore, autofirmato, creato a fini di test e quindi non valido per un utilizzo in un ambiente di produzione.
+
+Un metodo facile per ottenere un keystore che può essere usato per fini di test è attraverso la JDK con il comando seguente:
+```
+keytool -genkeypair -keyalg RSA -keysize 2048 -keystore keystore.p12 -storetype PKCS12 -validity 365 -storepass password -keypass password -dname "CN=YourName, OU=YourOrgUnit, O=YourOrg, L=YourCity, ST=YourState, C=YourCountry"
+```
 
 <br>
 Se si vuole disabilitarlo per motivi di test, basta commentare le righe viste in precedenza insieme alle seguenti in "SecurityConfiguration" in "configure":
