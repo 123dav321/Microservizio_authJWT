@@ -1,23 +1,14 @@
 # Microservizio con autenticazione JWT
 
-Realizzazione di un microservizio che implementa l'autenticazione basata su JSON Web Token (JWT), con Spring Boot(v2.2.2), Spring Security e jjwt, con un front-end di esempio per verificare il funzionamento insieme a dei dati precaricati all'avvio dell'applicazione, e rimossi alla sua chiusura.
+Creazione di un microservizio che integra l'autenticazione basata su JSON Web Token (JWT) utilizzando Spring Boot (v2.2.2). L'applicazione è implementata tramite Spring Security in combinazione con la libreria jjwt per la gestione dei token JWT, e si avvale di un database H2 per la memorizzazione degli utenti. All'avvio, vengono precaricati dati di prova nel database per scopi di testing. È inoltre fornito un front-end di esempio per verificare il corretto funzionamento dell'applicazione. L'applicazione permette di configurare SSL per garantire la sicurezza delle comunicazioni.
 
-## Dettagli
-
-- Java 1.8 
-- database: H2
 
 ## Installazione
 
-Con Maven assicurarsi che tutte le dipendense vengano installate correttamente con:
+L'applicazione farà uso di Java 1.8.
 
-        mvn install
+A seconda dell'ambiente di sviluppo utilizzato, come Eclipse o IntelliJ IDEA, i passaggi potrebbero variare, semplificando eventualmente il processo di installazione rispetto all'utilizzo del solo terminale. In linea generale, è necessario prima verificare l'installazione corretta di tutte le dipendenze tramite Maven e, successivamente, sarà possibile avviare il progetto Spring Boot.
 
-Successivamente è possibile avviare il progetto Spring Boot
-
-        mvn spring-boot:run
-
-In base all'ambiente di sviluppo che si sta utilizzando (Eclipse, IntelliJ IDEA ecc.) i passaggi possono essere diversi.
 
 ## Configurazione
 
@@ -34,14 +25,14 @@ La chiave segreta usata per il JWT è stata salvata momentaneamente per lo svilu
 
 E' buona norma non scrivere mai nel codice chiavi segrete usate per la cifratura dei dati, l'ideale è usare altri sistemi, come l'uso di variabili di ambiente.
 
-L'applicazione consente l'uso di SSL per la cifratura dei dati, è possibile usarlo scommentando nell'application properties:
+L'applicazione consente l'uso di SSL per la cifratura dei dati, è possibile usarlo togliendo i commenti nell'application properties:
 
     server.ssl.key-store-type
     server.ssl.key-store
     server.ssl.key-store-password
     server.ssl.key-alias
 
-ed inserendo i valori corretti in base al keystore utilizzato, che andrà salvato nella'albero delle cartelle del progetto. Successivamente certificato da qualche ente per il correto funzionamento.
+ed inserendo i valori corretti in base al keystore utilizzato, che andrà salvato nella'albero delle cartelle del progetto. 
 Bisognerà scommentare le righe di codice presenti nella "SecurityConfiguration" in "configure":
 
         .requiresChannel()
@@ -50,6 +41,8 @@ Bisognerà scommentare le righe di codice presenti nella "SecurityConfiguration"
         .and()
 
 ed nel front-end modificare URL per l'uso di https.
+
+
 
 ## Utilizzo
 
@@ -84,16 +77,16 @@ Nel caso provassimo ad accedere senza un jwt valido, otteremo nella console il s
 
 ## Funzionamento generale
 
-Nell'autenticazione iniziale, all'endpoint "/authenticate" in una richiesta POST, nell'header in formato JSON verrano mandate le credenziali dell'utente:
+Nel processo di autenticazione iniziale, effettuato tramite la richiesta POST all'endpoint "/authenticate", le credenziali dell'utente vengono trasmesse nell'header in formato JSON come segue:
 
     {
       "userName": "nome",
       "password": "password"
     }
 
-Il microservizio una volta verificata la veridicità delle credenziali, genera il jwt. 
-Il JWT è generato con il nome utente, la data di creazione e la data di scadenza (10 ore), firmato con un algoritmo H512.
-Il token verrà salvato nel browser in "Local Storage" con la voce "jwt". Quando si desiderà accedere ad endpoint protetti, il jwt verrà inviato nell'header della richiesta nel modo seguente:
+Una volta che il microservizio ha verificato la validità delle credenziali, procede alla generazione del JSON Web Token (JWT). Questo token contiene il nome utente, la data di creazione e la data di scadenza (impostata a 10 ore) ed è firmato mediante l'algoritmo H512.
+
+Il JWT viene successivamente memorizzato nel browser in "Local Storage" con l'etichetta "jwt". Quando si desidera accedere agli endpoint protetti, il JWT viene incluso nell'header della richiesta nel seguente modo:
 
     Authorization: Bearer "jwt"
 
