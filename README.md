@@ -46,33 +46,30 @@ ed nel front-end modificare URL per l'uso di https.
 
 ## Utilizzo
 
-Dopo aver avviato l'applicazione, per ottenere un JWT bisognerà prima autenticarsi con un nome utente e password.
+Dopo aver avviato l'applicazione, è necessario autenticarsi con un nome utente e password per ottenere un JSON Web Token (JWT).
 
-Questa sarà la pagina iniziale di esempio, dove abbiamo un link al form per il login e uno per accedere alla risorsa disponibile solo se in possesso di un JWT.
+La pagina iniziale di esempio presenta un link al form di login e un altro per accedere a una risorsa disponibile solo con un JWT.
 
 ![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/cf38eb83-2d71-4cd7-9c4d-f95c6f911140)
 
-Questa è la pagina che ospita il form per l'autenticazione, bisognerà inserire delle credenziali valide per ottenere un JWT. 
+
+La pagina di autenticazione ospita il form in cui è necessario inserire credenziali valide per ottenere il JWT. In caso di successo, il token viene salvato nel "Local Storage" del browser con l'etichetta "jwt".
 
 ![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/b51b2ddc-7b7c-4c53-84a3-6c00190c49c6)
 
-Se l'autenticazione è andata a buon fine, verrà salvato nel Local Storage del browser il token sotto la voce "jwt". 
 
-![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/cb39deed-9be2-44ef-b211-d34d3407a263)
-
-(Su google chroome apparirà così)
-
-D'ora in poi tutte quelle risorse che richiedono l'uso di un JWT lo andranno a prelevare dal browser e andranno a verificare la sua validità.
-
-Cliccando sul link risorsaProtetta è possibile vedere nella console del browser il messaggio restituito
+Da questo momento in poi, le risorse che richiedono un JWT lo prelevano dal browser e ne verificano la validità. Cliccando sul link "risorsaProtetta" è possibile visualizzare nella console del browser il messaggio restituito.
 
 ![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/42808a6c-aef0-4b3c-8ee7-9d578af48df7)
 
-Nel caso di studio in questione non si è andati ad usare una risorsa in particolare e ci si è limitati ad un semplice messaggio, in base alle esigenze, sarà possibile cambiare questa risorsa, il tutto senza modificare il comportamente generale dell'applicazione
 
-Nel caso provassimo ad accedere senza un jwt valido, otteremo nella console il seguente messaggio di errore:
+Nel caso di questo caso studio, è stato utilizzato solo un semplice messaggio. A seconda delle esigenze, è possibile cambiare questa risorsa senza modificare il comportamento generale dell'applicazione.
+
+Se si tenta di accedere senza un JWT valido, verrà visualizzato nella console del browser il seguente messaggio di errore:
 
 ![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/c42b85e9-24cf-45c4-8fcf-13fbbf5c7b2f)
+
+
 
 
 ## Funzionamento generale
