@@ -36,7 +36,7 @@ server.ssl.key-alias= alias_certificato
 ```
 È possibile inserire i valori desiderati in base al keystore utilizzato.
 
-Un metodo facile per ottenere un keystore che può essere usato per fini di test è attraverso la JDK con il comando seguente:
+Un metodo facile per ottenere un keystore autofirmato che può essere usato per fini di test è attraverso la JDK con il comando seguente:
 ```
 keytool -genkeypair -keyalg RSA -keysize 2048 -keystore keystore.p12 -storetype PKCS12 -validity 365 -storepass password -keypass password -dname "CN=YourName, OU=YourOrgUnit, O=YourOrg, L=YourCity, ST=YourState, C=YourCountry"
 ```
