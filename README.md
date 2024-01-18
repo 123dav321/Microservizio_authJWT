@@ -71,7 +71,7 @@ La pagina di autenticazione ospita il form in cui è necessario inserire credenz
 ![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/cb39deed-9be2-44ef-b211-d34d3407a263)
 
 
-
+<br>
 
 Da questo momento in poi, le risorse che richiedono un JWT lo prelevano dal browser e ne verificano la validità. Cliccando sul link "risorsaProtetta" è possibile visualizzare nella console del browser il messaggio restituito.
 
