@@ -43,6 +43,7 @@ keytool -genkeypair -keyalg RSA -keysize 2048 -keystore keystore.p12 -storetype 
 
 <br>
 Se si vuole disabilitarlo per motivi di test, basta commentare le righe viste in precedenza insieme alle seguenti in "SecurityConfiguration" in "configure":
+
 ```
 .requiresChannel()
 .anyRequest()
