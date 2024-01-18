@@ -58,6 +58,7 @@ Dopo aver avviato l'applicazione, è necessario autenticarsi con un nome utente 
 
 La pagina iniziale di esempio presenta un link al form di login e un altro per accedere a una risorsa disponibile solo con un JWT.
 
+
 ![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/cf38eb83-2d71-4cd7-9c4d-f95c6f911140)
 
 
