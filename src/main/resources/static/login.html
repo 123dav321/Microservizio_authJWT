@@ -1,0 +1,61 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <a href='/home.html'> Home </a>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="test" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" value="password" required>
+        <br>
+        
+        <input type="hidden" id="_csrf" name="_csrf" value="valore_del_csrf">
+        
+        <button type="button" id="loginButton">Login</button>
+    </form>
+<script type="text/javascript" src="./js/login.js"></script>
+
+<!--
+<script>
+    function login() {
+        const userName = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Esegui la richiesta POST per ottenere il token
+        fetch('http://localhost:9192/authenticate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            
+            },
+            body: JSON.stringify({ userName, password }),
+        })
+        .then(response => response.text())
+        .then(token => {
+			console.log('Token ricevuto:', token);
+			
+            // Salva il token nel localStorage
+            localStorage.setItem('jwt', token);
+
+			// Redirect o esegui altre azioni dopo il login
+            	window.location.href = '/';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+-->
+
+</body>
+</html>
+
