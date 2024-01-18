@@ -12,25 +12,21 @@ A seconda dell'ambiente di sviluppo utilizzato, come Eclipse o IntelliJ IDEA, i 
 
 ## Configurazione
 
-Nell "application.yml" è possibile configurare la porta da utilizzare con:
-
+Nel file "application.yml" è possibile configurare la porta da utilizzare mediante il seguente codice:
 ```
 server:
     port: 9192
 ```
+Di default, l'applicazione è impostata per utilizzare la porta 9192.
 
-Di default l'applicazione è impostata per usare la 9192.
 
-La chiave segreta usata per il JWT è stata salvata momentaneamente per lo sviluppo e il test, nell'application.propteries sotto la voce:
-
+La chiave segreta utilizzata per il JSON Web Token (JWT) è temporaneamente salvata nell'"application.properties" sotto la voce:
 ```
 jwt.secret
 ```
+È consigliabile evitare di scrivere chiavi segrete direttamente nel codice per motivi di sicurezza. L'approccio ideale consiste nell'utilizzare altri metodi, come l'uso di variabili d'ambiente.
 
-E' buona norma non scrivere mai nel codice chiavi segrete usate per la cifratura dei dati, l'ideale è usare altri sistemi, come l'uso di variabili di ambiente.
-
-L'applicazione consente l'uso di SSL per la cifratura dei dati, è possibile usarlo togliendo i commenti nell'application properties:
-
+L'applicazione supporta l'utilizzo di SSL per la cifratura dei dati. È possibile abilitarlo rimuovendo i commenti nelle seguenti righe nel file "application.properties":
 ```
 server.ssl.key-store-type
 server.ssl.key-store
@@ -41,14 +37,14 @@ server.ssl.key-alias
 ed inserendo i valori corretti in base al keystore utilizzato, che andrà salvato nella'albero delle cartelle del progetto. 
 Bisognerà scommentare le righe di codice presenti nella "SecurityConfiguration" in "configure":
 
+Inserire i valori corretti in base al keystore utilizzato, che andrà salvato nella struttura delle cartelle del progetto. Sarà inoltre necessario decommentare le righe di codice presenti nella classe "SecurityConfiguration" nel metodo "configure":
 ```
 .requiresChannel()
 .anyRequest()
 .requiresSecure()
 .and()
 ```
-
-ed nel front-end modificare URL per l'uso di https.
+Infine, nel front-end, sarà necessario modificare l'URL per l'utilizzo di HTTPS."
 
 
 
