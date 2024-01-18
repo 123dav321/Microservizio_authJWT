@@ -56,17 +56,21 @@ La pagina iniziale di esempio presenta un link al form di login e un altro per a
 La pagina di autenticazione ospita il form in cui è necessario inserire credenziali valide per ottenere il JWT. In caso di successo, il token viene salvato nel "Local Storage" del browser con l'etichetta "jwt".
 
 ![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/b51b2ddc-7b7c-4c53-84a3-6c00190c49c6)
+![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/cb39deed-9be2-44ef-b211-d34d3407a263)
+
+
 
 
 Da questo momento in poi, le risorse che richiedono un JWT lo prelevano dal browser e ne verificano la validità. Cliccando sul link "risorsaProtetta" è possibile visualizzare nella console del browser il messaggio restituito.
+
 
 ![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/42808a6c-aef0-4b3c-8ee7-9d578af48df7)
 
 
 Nel caso di questo caso studio, è stato utilizzato solo un semplice messaggio. A seconda delle esigenze, è possibile cambiare questa risorsa senza modificare il comportamento generale dell'applicazione.
 
-Se si tenta di accedere senza un JWT valido, verrà visualizzato nella console del browser il seguente messaggio di errore:
 
+Se si tenta di accedere senza un JWT valido, verrà visualizzato nella console del browser il seguente messaggio di errore:
 ![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/c42b85e9-24cf-45c4-8fcf-13fbbf5c7b2f)
 
 
