@@ -59,11 +59,9 @@ keytool -genkeypair -keyalg RSA -keysize 2048 -keystore keystore.p12 -storetype 
 
 Dopo aver avviato l'applicazione, è necessario autenticarsi con un nome utente e password per ottenere un JSON Web Token (JWT).
 
-La pagina iniziale di esempio presenta un link al form di login e un altro per accedere a una risorsa disponibile solo con un JWT.
+La pagina iniziale di esempio è raggiungibile da https://localhost:9192/home.html e presenta un link al form di login e un altro per accedere a una risorsa disponibile solo con un JWT.
 
-
-![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/cf38eb83-2d71-4cd7-9c4d-f95c6f911140)
-
+![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/51379035-54d5-4aa7-9653-75b3cfc8bccc)
 
 La pagina di autenticazione ospita il form in cui è necessario inserire credenziali valide per ottenere il JWT. In caso di successo, il token viene salvato nel "Local Storage" del browser con l'etichetta "jwt".
 
