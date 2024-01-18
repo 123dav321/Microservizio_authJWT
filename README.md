@@ -1,6 +1,6 @@
 # Microservizio con autenticazione JWT
 
-Creazione di un microservizio che integra l'autenticazione basata su JSON Web Token (JWT) utilizzando Spring Boot (v2.2.2). L'applicazione è implementata tramite Spring Security in combinazione con la libreria jjwt per la gestione dei token JWT, e si avvale di un database H2 per la memorizzazione degli utenti. All'avvio, vengono precaricati dati di prova nel database per scopi di testing. È inoltre fornito un front-end di esempio per verificare il corretto funzionamento dell'applicazione. L'applicazione permette di configurare SSL per garantire la sicurezza delle comunicazioni.
+Creazione di un microservizio che integra l'autenticazione basata su JSON Web Token (JWT) utilizzando Spring Boot. L'applicazione è implementata tramite Spring Security in combinazione con la libreria jjwt per la gestione dei token JWT, e si avvale di un database H2 per la memorizzazione degli utenti. All'avvio, vengono precaricati dati di prova nel database per scopi di testing. È inoltre fornito un front-end di esempio per verificare il corretto funzionamento dell'applicazione. L'applicazione permette di configurare SSL per garantire la sicurezza delle comunicazioni.
 
 
 ## Installazione
@@ -37,7 +37,7 @@ server.ssl.key-alias= alias_certificato
 Dove è possibile inserire i valori desiderati.
 
 <br>
-Se si vuole disabilitarlo per motivi di test (siccome in questa release non è stato inserito un keystore), basta commentare le righe viste in precedenza insieme alle seguenti in "SecurityConfiguration" in "configure":
+Se si vuole disabilitarlo per motivi di test (siccome nel repository GitHub non è stato inserito un keystore), basta commentare le righe viste in precedenza insieme alle seguenti in "SecurityConfiguration" in "configure":
 
 ```
 .requiresChannel()
@@ -48,7 +48,7 @@ Se si vuole disabilitarlo per motivi di test (siccome in questa release non è s
 Infine, nel front-end, modificare tutti gli URL per far sì che usino HTTP.
 
 <br>
-Un metodo facile per ottenere un keystore autofirmato che può essere usato per fini di test è attraverso la JDK con il comando seguente:
+Un metodo comunque facile per ottenere un keystore autofirmato che può essere usato per fini di test è attraverso la JDK con il comando:
 
 ```
 keytool -genkeypair -keyalg RSA -keysize 2048 -keystore keystore.p12 -storetype PKCS12 -validity 365 -storepass password -keypass password -dname "CN=YourName, OU=YourOrgUnit, O=YourOrg, L=YourCity, ST=YourState, C=YourCountry"
