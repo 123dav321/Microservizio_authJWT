@@ -85,7 +85,7 @@ Se si tenta di accedere senza un JWT valido, verrà visualizzato nella console d
 
 
 
-
+<br>
 ## Funzionamento generale
 
 Nel processo di autenticazione iniziale, effettuato tramite la richiesta POST all'endpoint "/authenticate", le credenziali dell'utente vengono trasmesse nell'header in formato JSON come segue:
