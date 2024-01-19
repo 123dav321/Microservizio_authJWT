@@ -80,7 +80,7 @@ Da questo momento in poi, le risorse che richiedono un JWT lo prelevano dal brow
 Nel caso di questo caso studio, è stato utilizzato solo un semplice messaggio. A seconda delle esigenze, è possibile cambiare questa risorsa senza modificare il comportamento generale dell'applicazione.
 
 
-Se si tenta di accedere senza un JWT valido, verrà visualizzato nella console del browser il seguente messaggio di errore:
+Se si tenta di accedere senza un JWT, verrà visualizzato nella console del browser il seguente messaggio di errore:
 ![immagine](https://github.com/123dav321/Microservizio_authJWT/assets/156787522/c42b85e9-24cf-45c4-8fcf-13fbbf5c7b2f)
 
 
